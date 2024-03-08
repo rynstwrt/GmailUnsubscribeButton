@@ -6,7 +6,7 @@ function findUnsubscribeLink(linkElements)
     let unsubscribeLinkElement;
     for (let linkElement of linkElements)
     {
-        const text = linkElement.textContent.trim();
+        const text = linkElement.textContent.toLowerCase().trim();
 
         for (const unsubscribeText of UNSUBSCRIBE_TEXTS)
         {
@@ -25,7 +25,7 @@ function findUnsubscribeLink(linkElements)
 }
 
 
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) =>
+chrome.runtime.onMessage.addListener(() =>
 {
     const linkElements = document.querySelectorAll("tbody a")
 
