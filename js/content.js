@@ -27,7 +27,7 @@ function findUnsubscribeLink(linkElements)
 
 chrome.runtime.onMessage.addListener(() =>
 {
-    const linkElements = document.querySelectorAll("tbody a")
+    const linkElements = document.querySelectorAll("tbody a");
 
     const unsubscribeLinkElement = findUnsubscribeLink(linkElements);
     if (!unsubscribeLinkElement)
