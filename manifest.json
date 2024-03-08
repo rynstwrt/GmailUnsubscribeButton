@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Gmail Unsubscribe Button",
+    "description": "A browser extension to automatically find and click the unsubscribe button in a Gmail email.",
+    "version": "2.0",
+    "icons": {
+        "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png"
+    },
+    "action": {
+        "default_title": "Gmail Unsubscribe Button"
+    },
+    "content_scripts": [{
+        "js": ["js/content.js"],
+        "matches": ["https://mail.google.com/mail*"]
+    }],
+    "background": {
+        "service_worker": "js/service-worker.js"
+    },
+    "permissions": ["activeTab", "scripting", "tabs"]
+}
